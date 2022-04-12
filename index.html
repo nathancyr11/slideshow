@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Yellowstone National Park</title>
+</head>
+
+<body>
+    <header class="clearfix">
+        <img src="images/logo.png.crdownload">
+        <h1>Yellowstone National Park</h1>
+    </header>
+
+    <section>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <img src="images/1.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/2.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/3.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/4.jpg">
+            </div>
+            <!-- Next and previous buttons -->
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <script>
+        window.onload = function () {
+            var d = new Date();
+            document.getElementById("copyright").innerHTML = d.getFullYear();
+        }
+    </script>
+    <footer>
+        <p> &copy; <span id="copyright"></span> Nathan Cyr Productions</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; } slideIndex++; if (slideIndex >
+                slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>
